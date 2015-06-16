@@ -71,7 +71,7 @@ namespace PushAspxDemo
                 strSignUpper.Append(c);
             }
 
-            strSignUpper = strSignUpper.Replace("(", "%28").Replace(")", "%29");
+            strSignUpper = strSignUpper.Replace("(", "%28").Replace(")", "%29").Replace("!", "%21").Replace("*", "%2A");
 
             
             var sign = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(strSignUpper.ToString(), "MD5").ToLower();
